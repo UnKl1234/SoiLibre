@@ -1,0 +1,226 @@
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #0c0d0d;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  height: 400px;
+}
+
+header #logo {
+  width: 290px;
+  height: 89x;
+  margin: 29px auto;       /* centrage horizontal + marge verticale */
+  display: block;          /* pour que margin auto fonctionne */
+  max-width: 90vw;         /* ne dépasse pas 90% largeur écran */
+  object-fit: contain;     /* garde le ratio */
+}
+
+.zoom #logo {
+  width: 300px; /* ou une taille adaptée */
+  height: auto;
+  animation: zoomInOut 5s ease-in ;
+  transition: transform 0.3s;
+}
+
+/* Animation keyframes */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Zoom léger */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+nav a {
+  color:white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:hover {
+  color: #0077ff;
+}
+
+nav i {
+  font-size: 24px;
+}
+
+/* CITATIONS AVEC BORDURE ET SHADOW CENTRÉ */
+h1 {
+  text-decoration: underline red;
+  padding: 20px;
+}
+
+#citation {
+  width: 99%;
+  height: 230px;
+  margin: 30px auto;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  padding-top: 12px;
+  color: #333;
+}
+
+pre {
+  color: rgb(35, 100, 213);
+}
+
+/* IMAGES EN LIGNE AVEC BORDURE, SHADOW ET ANIMATION */
+#border {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#border div {
+  text-align: center;
+}
+
+#border img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#border img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+span {
+  font-size: 19px;
+  font-weight: bold;
+  margin-left: 20px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+h2 {
+  font-size: 19px;
+  font-weight: bold;
+  color: rgb(35, 100, 213);
+  padding-left: 20px;
+  text-align: center;
+  text-decoration: underline rgb(35, 100, 213);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 10px;
+  color: #888;
+  font-size: 0.9em;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+
+  /* Navigation verticalisée, centrée */
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 20px;
+  }
+
+  /* Réduction et centrage du logo dans le header */
+  header {
+    height: auto;
+    padding: 15px 10px;
+  }
+
+  header #logo {
+    width: 180px;
+    height: auto;
+    margin: 15px auto;
+    display: block;
+    max-width: 90vw;
+    object-fit: contain;
+  }
+
+  /* Texte citation plus lisible et marges */
+  #citation {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    font-size: 15px;
+    padding: 15px;
+  }
+
+  /* Les images deviennent plus petites et empilées */
+  #border {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  #border img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  span {
+    display: block;
+    text-align: center;
+    margin: 8px 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 0;
+  }
+
+  /* Titres centrés et adaptés */
+  h2 {
+    font-size: 22px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  /* Footer plus petit et avec marge */
+  footer {
+    font-size: 0.8em;
+    margin: 30px auto;
+    padding: 15px 10px;
+  }
+}
